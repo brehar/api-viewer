@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-md-3" ng-repeat="poke in pokemon track by $index">
+        <div class="well">
+            <a ui-sref="detail({id: $index + 1})"><img ng-src="http://pokeapi.co/media/sprites/pokemon/{{ $index + 1 }}.png">
+            {{ poke.name | capitalize }}</a>
+        </div>
+    </div>
+</div>
+<div class="col-md-2 col-md-offset-5">
+    <div class="row">
+        <div class="pull-right">
+            <a ui-sref="page({id: 1})"><i class="glyphicon glyphicon-menu-right"></i></a>
+        </div>
+    </div>
+</div>

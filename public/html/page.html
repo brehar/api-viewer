@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-md-3" ng-repeat="poke in pokemon track by $index">
+        <div class="well">
+            <a ui-sref="detail({id: $index + page * 20 + 1})"><img ng-src="http://pokeapi.co/media/sprites/pokemon/{{ $index + page * 20 + 1 }}.png">
+            {{ poke.name | capitalize }}</a>
+        </div>
+    </div>
+</div>
+<div class="col-md-2 col-md-offset-5">
+    <div class="row">
+        <div class="pull-left" ng-if="page - 1 >= 0">
+            <a ui-sref="page({id: page - 1})"><i class="glyphicon glyphicon-menu-left"></i></a>
+        </div>
+        <div class="pull-right" ng-if="nextPage <= 40">
+            <a ui-sref="page({id: nextPage})"><i class="glyphicon glyphicon-menu-right"></i></a>
+        </div>
+    </div>
+</div>
